@@ -26,7 +26,7 @@ h2 {
   padding: 0;
   margin: 0;
 }
-span:hover, a:hover {
+span:hover, a:hover, .highlight {
 	color: #ccc;
 }
 a {
@@ -38,6 +38,20 @@ a:hover {
 	
 }
 </style>
+<script type="text/javascript">
+function byron() { document.getElementById("BK").className = "highlight"; document.getElementById("BKNAME").className = "highlight" }
+function ampersand() { document.getElementById("N").className = "highlight"; document.getElementById("AND").className = "highlight"; document.getElementById("BK").className = "", document.getElementById("BKNAME").className = "" }
+function glenn() { document.getElementById("N").className = ""; document.getElementById("AND").className = ""; document.getElementById("GM").className = "highlight"; document.getElementById("GMNAME").className = "highlight" }
+function done() { document.getElementById("GM").className = ""; document.getElementById("GMNAME").className = "" }
+function present() {
+   var wait = 20000;
+   var interval = 2000;
+   setTimeout(byron,wait);
+   setTimeout(ampersand,wait+interval);
+   setTimeout(glenn,wait+interval*2);
+   setTimeout(done,wait+interval*3);
+}
+</script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -52,7 +66,7 @@ a:hover {
 
 </script>
 </head>
-<body>
+<body onload="present()">
 <h1><span id="BK">BK</span><span id="N">N</span><span id="GM">GM</gm></h1>
 <h2><span id="BKNAME" title="Byron Daniel Kingma &mdash; Mechanical Engineering">B.D KINGMA</span> <span id="AND" title="And &mdash; crucial conjunction &amp; indefinite article">&amp;</span> <span id="GMNAME" title="Glenn Francis Murray &mdash; Software Engineering">G.F MURRAY</span></h2>
 <p>
